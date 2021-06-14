@@ -86,7 +86,7 @@ namespace СделкаИлиНе
         }
         private void ReadCurrentPrizes()
         {
-            string dest = Path.Combine("Prizes.txt");
+            string dest = Path.Combine("..","..","..","data","Prizes.txt");
             List<double> lines = File.ReadAllLines(dest).Select(double.Parse).ToList();
             currentPrizes.Clear();
             currentPrizes.AddRange(lines);

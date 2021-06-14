@@ -27,7 +27,7 @@ namespace СделкаИлиНе
         }
         public void FillCurrentPlayers()
         {
-            string dest = Path.Combine("HighScore.txt");
+            string dest = Path.Combine("..","..","..","data","HighScore.txt");
             var lines = File.ReadAllLines(dest);
 
             List<string> output = new List<string>(lines);

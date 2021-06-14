@@ -310,7 +310,8 @@ namespace СделкаИлиНе
                 return;
             }
 
-            PlayMusic("Windows Exclamation.WAV");
+            string musicPath = Path.Combine("..", "..", "..", "data", "Windows Exclamation.WAV");
+            PlayMusic(musicPath);
 
             if (((PictureBox)sender).Name.Contains("2"))
             {
@@ -436,7 +437,8 @@ namespace СделкаИлиНе
 
             if ((openedBoxes % 2 == 0 && openedBoxes <= 8))
             {
-                PlayMusic("Windows Ringin.WAV");
+                string musicPath = Path.Combine("..", "..", "..", "data", "Windows Ringin.WAV");
+                PlayMusic(musicPath);
 
                 bankOffer.StartPosition = FormStartPosition.CenterScreen;
 
@@ -530,7 +532,7 @@ namespace СделкаИлиНе
 
         public void RefreshPrizesFile()
         {
-            string dest = Path.Combine("Prizes.txt");
+            string dest = Path.Combine("..","..","..","data","Prizes.txt");
 
             File.WriteAllLines(dest, currentPrizes);
         }
@@ -685,7 +687,7 @@ namespace СделкаИлиНе
         //End Game
         public void WriteWinnerInFile()
         {
-            string dest = Path.Combine("HighScore.txt");
+            string dest = Path.Combine("..","..","..","data","HighScore.txt");
             List<string> lines = File.ReadAllLines(dest).ToList();
             lines.Add($"{userName} - {wonPrize}");
 
@@ -719,17 +721,20 @@ namespace СделкаИлиНе
 
                 if (double.Parse(wonPrize) > double.Parse(lblPlayerPrize.Text))
                 {
-                    PlayMusic("tada.WAV");
+                    string musicPath = Path.Combine("..", "..", "..", "data", "tada.WAV");
+                    PlayMusic(musicPath);
                 }
                 else
                 {
-                    PlayMusic("Windows Logoff Sound.WAV");
+                    string musicPath = Path.Combine("..", "..", "..", "data", "Windows Logoff Sound.WAV");
+                    PlayMusic(musicPath);
                 }
             }
             else
             {
+                string musicPath = Path.Combine("..", "..", "..", "data", "Windows Print complete.WAV");
                 MessageBox.Show($"{userName}, Вие спечелихте {wonPrize} лева!");
-                PlayMusic("Windows Print complete.WAV");
+                PlayMusic(musicPath);
 
             }
 
