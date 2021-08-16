@@ -43,7 +43,7 @@ The game is straightforward - each game the boxes and the prizes inside are **ra
 ### Database
 	o Self-updating .txt files after specific actions
 	
-### What i have learnt 💡
+### What I have learnt 💡
 
 	o Windows Forms GUI
 	
